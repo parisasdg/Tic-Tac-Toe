@@ -58,7 +58,6 @@ function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = driveActivePlayer(gameTurns);
   const gameBoard = driveGameBoard(gameTurns);
-  const hasDraw = gameTurns.length === 9 && !winner;
 
   function handleRematch() {
     setGameTurns([]);
@@ -89,6 +88,9 @@ function App() {
       return updatedTurns;
     });
   }
+
+  const hasDraw = gameTurns.length === 9 && !winner;
+
   return (
     <main>
       <div id="game-container">
